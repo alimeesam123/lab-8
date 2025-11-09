@@ -3,6 +3,7 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { Github } from 'lucide-react';
 import { BitsManipulator } from '@/components/bits-manipulator';
 import { Logo } from '@/components/logo';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -27,17 +28,27 @@ export default function Home() {
         <BitsManipulator />
       </main>
       <footer className="w-full py-6 z-10">
-        <div className="container mx-auto text-center text-sm text-muted-foreground">
-          <a
-            href="https://github.com/firebase/firebase-genkit-samples/tree/main/apps/scit-converter-next"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 transition-colors hover:text-foreground"
-            aria-label="View on GitHub"
-          >
-            <Github className="h-4 w-4" />
-            <span>View on GitHub</span>
-          </a>
+        <div className="container mx-auto text-center text-sm text-muted-foreground space-y-3">
+          <nav className="flex items-center justify-center gap-4 flex-wrap">
+            <Link href="/learn" className="transition-colors hover:text-foreground">
+              Learn Number Systems
+            </Link>
+            <span className="text-muted-foreground/50">•</span>
+            <Link href="/resources" className="transition-colors hover:text-foreground">
+              Resources
+            </Link>
+            <span className="text-muted-foreground/50">•</span>
+            <a
+              href="https://github.com/firebase/firebase-genkit-samples/tree/main/apps/scit-converter-next"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 transition-colors hover:text-foreground"
+              aria-label="View on GitHub"
+            >
+              <Github className="h-4 w-4" />
+              <span>GitHub</span>
+            </a>
+          </nav>
         </div>
       </footer>
     </div>
